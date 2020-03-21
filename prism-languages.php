@@ -45,7 +45,6 @@ function mkaz_code_syntax_block_get_supported_languages() {
 		"toml" => "TOML",
 		"typescript" => "TypeScript",
 		"vim" => "vim",
-		"visual-basic" => "Visual Basic",
 		"wasm" => "WebAssembly",
 		"wiki" => "Wiki markup",
 		"xml" => "XML",
