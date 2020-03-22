@@ -1,17 +1,14 @@
-name: MT Code Review
-on:
-  pull_request:
-    paths-ignore:
-      - 'lang/**'
-      - '**.txt'
-      - '**.md'
-      - '.editorconfig'
-      - 'CODEOWNERS'
+name: PHPCS check
+
+on: pull_request
+
 jobs:
   phpcs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: moderntribe/action-tribe-phpcs@master
-        with:
-          github-bot-token: ${{ secrets.GH_BOT_TOKEN }}
+      name: PHPCS
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: PHPCS check
+          uses: chekalsky/phpcs-action@v1
+          with:
+              enable_warnings: true
