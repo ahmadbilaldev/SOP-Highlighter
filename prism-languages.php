@@ -5,7 +5,7 @@
  * @return array Hash of lang => language
  */
 function mkaz_code_syntax_block_get_supported_languages() {
-	// Test phpcs check
+
 	$languages = array(
 		"apacheconf" => "Apache Config",
 		"bash" => "Bash/Shell",
@@ -62,4 +62,5 @@ function mkaz_code_syntax_block_get_supported_languages() {
 	 * @param string $languages Array of languages supported
 	 */
 	return apply_filters( 'mkaz_code_syntax_language_list', $languages );
+	// Test PHPCS check, should give warning for this comment.
 }
