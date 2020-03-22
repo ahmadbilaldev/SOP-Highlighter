@@ -5,7 +5,7 @@
  * @return array Hash of lang => language
  */
 function mkaz_code_syntax_block_get_supported_languages() {
-	
+	// Test phpcs check
 	$languages = array(
 		"apacheconf" => "Apache Config",
 		"bash" => "Bash/Shell",
