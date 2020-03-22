@@ -1,17 +1,16 @@
-name: MT Code Review
-on:
-  pull_request:
-    paths-ignore:
-      - 'lang/**'
-      - '**.txt'
-      - '**.md'
-      - '.editorconfig'
-      - 'CODEOWNERS'
+name: Run PHPCS on pull requests
+
+on: pull_request
+
 jobs:
   phpcs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: moderntribe/action-tribe-phpcs@master
-        with:
-          github-bot-token: ${{ secrets.GH_BOT_TOKEN }}
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: docker://rtcamp/action-phpcs-code-review:v2.0.0
+      env:
+        GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+      with:
+        args: "WordPress,WordPress-Core,WordPress-Docs"
