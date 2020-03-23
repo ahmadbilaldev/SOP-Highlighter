@@ -62,5 +62,5 @@ function mkaz_code_syntax_block_get_supported_languages() {
 	 * @param string $languages Array of languages supported
 	 */
 	return apply_filters( 'mkaz_code_syntax_language_list', $languages );
-	// Test PHPCS check, should give warning for this comment.
+	// Test PHPCS check, should give warning for this comment
 }
