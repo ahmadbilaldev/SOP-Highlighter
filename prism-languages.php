@@ -4,6 +4,7 @@
  * Retrieve support languages
  * @return array Hash of lang => language
  */
+// Test PHPCS
 function mkaz_code_syntax_block_get_supported_languages() {
 	
 	$languages = array(
@@ -62,5 +63,6 @@ function mkaz_code_syntax_block_get_supported_languages() {
 	 *
 	 * @param string $languages Array of languages supported
 	 */
+	
 	return apply_filters( 'mkaz_code_syntax_language_list', $languages );
 }
